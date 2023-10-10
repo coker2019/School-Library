@@ -29,12 +29,11 @@ Server
 Database
 
 ### Tech Stack <a name="tech-stack"></a>
-<a https://www.ruby-lang.org/en/</a>
-
 
 <details>
 
-</details>
+- <a href='https://www.ruby-lang.org/en/'> Ruby </a>
+
 
 ### Key Features <a name="key-features"></a>
 [Person class with instance vars, constructor, getters, setters, and methods]
