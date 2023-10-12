@@ -7,7 +7,7 @@ class ClassRoom
   end
 
   def add_student(student)
-    students << student
+    @students << student
     student.classroom = self # Set the student's classroom to this classroom.
   end
 end
