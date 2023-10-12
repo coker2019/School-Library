@@ -22,7 +22,7 @@ The [School-Library] application is designed to manage the library's book invent
  
 
 
-## 🛠 Built With <a name="built-with"></a>
+## 🛠 Built With <a name="livwith"></a>
 Tech Stack 
 Client
 Server
@@ -42,15 +42,6 @@ Database
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
- ## 🚀 Live Demo <a name="live-demo"></a> 
-
-
-
-
-
-
 
 <p align="right"><a href="#readme-top"></a></p>
 
