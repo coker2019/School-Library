@@ -2,11 +2,13 @@ require './rental'
 
 class RentalsManager
   attr_accessor :rentals, :books_manager, :people_manager
+
   def initialize(books_manager, people_manager)
     @rentals = []
     @books_manager = books_manager
     @people_manager = people_manager
   end
+
   def create_rental
     puts 'Select a book from the following list by number:'
     @books_manager.books.each_with_index do |book, index|
@@ -23,6 +25,7 @@ class RentalsManager
     @rentals << Rental.new(date, @books_manager.books[book_index], @people_manager.people[person_index])
     puts 'Rental created successfully'
   end
+
   def list_rentals_for_person
     print 'ID of person: '
     person_id = gets.chomp.to_i

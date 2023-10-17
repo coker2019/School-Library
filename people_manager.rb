@@ -1,22 +1,22 @@
 require './student'
 require './teacher'
 
-class  PeopleManager
-    attr_accessor :people
+class PeopleManager
+  attr_accessor :people
 
-    def initialize
-        @people = []
+  def initialize
+    @people = []
+  end
+
+  def list_of_people
+    puts 'List of pepple'
+    @people.each do |person|
+      # puts person.display_info
+      puts "ID: #{person.id}, Name: #{person.name}, Age: #{person.age}"
     end
+  end
 
-    def list_of_people
-        puts 'List of pepple'
-        @people.each do |person|
-            # puts person.display_info
-          puts "ID: #{person.id}, Name: #{person.name}, Age: #{person.age}"
-        end
-      
-end
-def create_person
+  def create_person
     print 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
     person_type = gets.chomp.to_i
 
