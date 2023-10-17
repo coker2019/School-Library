@@ -1,7 +1,6 @@
 require './app'
 require './main_menu'
 
-
 def main
   app = App.new
   puts 'Welcome to School Library System!'
