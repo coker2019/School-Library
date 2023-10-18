@@ -1,5 +1,6 @@
 require './student'
 require './teacher'
+require './store_data'
 
 class PeopleManager
   attr_accessor :people
@@ -10,8 +11,8 @@ class PeopleManager
 
   def list_of_people
     puts 'List of pepple'
+    @people = read_file('people.json')
     @people.each do |person|
-      # puts person.display_info
       puts "ID: #{person.id}, Name: #{person.name}, Age: #{person.age}"
     end
   end
@@ -35,6 +36,8 @@ class PeopleManager
       parent_permission = gets.chomp.downcase == 'y'
       @people << Student.new(age, name, parent_permission: parent_permission)
     end
+    write_file('people.json', @person)
+
     puts 'Person created successfully'
   end
 end
