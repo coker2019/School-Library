@@ -1,4 +1,5 @@
 require './rental'
+require './store_data'
 
 class RentalsManager
   attr_accessor :rentals, :books_manager, :people_manager
@@ -11,6 +12,7 @@ class RentalsManager
 
   def create_rental
     puts 'Select a book from the following list by number:'
+    @books = read_file('books.json')
     @books_manager.books.each_with_index do |book, index|
       puts "#{index}) Title: \"#{book.title}\", Author: #{book.author}"
     end
@@ -23,12 +25,14 @@ class RentalsManager
     print "\nDate: "
     date = gets.chomp
     @rentals << Rental.new(date, @books_manager.books[book_index], @people_manager.people[person_index])
+    write_file('rental.json', @rentals)
     puts 'Rental created successfully'
   end
 
   def list_rentals_for_person
     print 'ID of person: '
     person_id = gets.chomp.to_i
+    @rentals = read_file('rental.json')
     puts 'Rentals:'
     @rentals.each do |rental|
       if rental.person.id == person_id
