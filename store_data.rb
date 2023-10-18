@@ -13,11 +13,7 @@ def read_file(file)
   end
 end
 
-def write_file(file, content)
-  data = content.map(&:to_hash)
-  json = JSON.generate(data)
-  File.write(file, json)
-end
+
 
 
 

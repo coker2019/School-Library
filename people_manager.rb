@@ -36,7 +36,7 @@ class PeopleManager
       parent_permission = gets.chomp.downcase == 'y'
       @people << Student.new(age, name, parent_permission: parent_permission)
     end
-    write_file('people.json', @person)
+    write_file('people.json', @people)
 
     puts 'Person created successfully'
   end

@@ -17,27 +17,51 @@ class RentalsManager
       puts "#{index}) Title: \"#{book.title}\", Author: #{book.author}"
     end
     book_index = gets.chomp.to_i
+  
     puts "\nSelect a person from the following list by number (not id):"
     @people_manager.people.each_with_index do |person, index|
       puts "#{index}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
     end
+  
     person_index = gets.chomp.to_i
+  
     print "\nDate: "
     date = gets.chomp
-    @rentals << Rental.new(date, @books_manager.books[book_index], @people_manager.people[person_index])
+  
+    person = @people_manager.people[person_index]
+    rental_data = {
+      date: date,
+      book: @books_manager.books[book_index].to_hash,       # Convert to hash
+      person: {
+        id: person.id,
+        name: person.name,
+        age: person.age,
+        parent_permission: person.instance_variable_get(:@parent_permission),
+        specialization: person.instance_variable_get(:@specialization)
+      }
+    }
+  
+    @rentals << rental_data
     write_file('rental.json', @rentals)
     puts 'Rental created successfully'
   end
-
+  
   def list_rentals_for_person
     print 'ID of person: '
     person_id = gets.chomp.to_i
     @rentals = read_file('rental.json')
     puts 'Rentals:'
-    @rentals.each do |rental|
-      if rental.person.id == person_id
-        puts "Date: #{rental.date}, Book \"#{rental.book.title}\" by #{rental.book.author}"
+    person_rentals = @rentals.select do |rental|
+      person_id_in_rental = rental['person'].is_a?(Hash) ? rental['person']['id'] : rental['person']
+      person_id_in_rental == person_id
+    end
+  
+    if person_rentals.empty?
+      puts 'No rentals found for the given person ID.'
+    else
+      person_rentals.each do |rental|
+        puts "Date: #{rental['date']}, Book \"#{rental['book']['title']}\" by #{rental['book']['author']}"
       end
     end
-  end
+  end  
 end
