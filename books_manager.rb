@@ -1,4 +1,5 @@
 require './book'
+require './store_data'
 
 class BooksManager
   attr_accessor :books
@@ -10,6 +11,7 @@ class BooksManager
   def list_of_books
     puts 'List of Books:'
     @books.each do |book|
+    @books = read_file('books.json')
       puts "Title: #{book.title}, Author: #{book.author}"
     end
     puts
@@ -23,6 +25,7 @@ class BooksManager
 
     book = Book.new(title, author)
     @books << book
+    write_file('books.json', @books)
     puts 'Book created successfully.'
   end
 end
