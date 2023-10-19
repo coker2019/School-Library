@@ -12,8 +12,22 @@ class PeopleManager
   def list_of_people
     puts 'List of pepple'
     @people = read_file('people.json')
-    @people.each do |person|
+    @people.each do |person_data|
+      person = create_person_instance(person_data)
       puts "ID: #{person.id}, Name: #{person.name}, Age: #{person.age}"
+    end
+  end
+
+  def create_person_instance(person_data)
+    if person_data['specialization']
+      Teacher.new(
+        person_data['age'],
+        person_data['name'],
+        parent_permission: person_data['parent_permission'],
+        specialization: person_data['specialization']
+      )
+    else
+      Student.new(person_data['age'], person_data['name'], parent_permission: person_data['parent_permission'])
     end
   end
 

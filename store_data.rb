@@ -14,12 +14,7 @@ def read_file(file)
 end
 
 def write_file(file, content)
-  data = content.map { |item| item.send(:to_hash) }  # Accessing private method using send
+  data = content.map(&:to_hash)
   json = JSON.generate(data)
   File.write(file, json)
 end
-
-
-
-
-

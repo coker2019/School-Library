@@ -11,7 +11,7 @@ class BooksManager
   def list_of_books
     puts 'List of Books:'
     @books.each do |book|
-    @books = read_file('books.json')
+      @books = read_file('books.json')
       puts "Title: #{book.title}, Author: #{book.author}"
     end
     puts
