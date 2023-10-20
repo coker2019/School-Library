@@ -1,5 +1,6 @@
-class ClassRoom
-  attr_accessor :label, :students
+class Classroom
+  attr_accessor :label
+  attr_reader :students
 
   def initialize(label)
     @label = label
@@ -8,6 +9,6 @@ class ClassRoom
 
   def add_student(student)
     @students << student
-    student.classroom = self # Set the student's classroom to this classroom.
+    student.classroom = self
   end
 end
