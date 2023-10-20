@@ -73,6 +73,11 @@ In order to run this project you need:
     ```sh
     ruby School-Library.rb
 
+4. Run the tests:
+
+   ```sh
+    rspec ./spec/test_file_name.rb
+
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
