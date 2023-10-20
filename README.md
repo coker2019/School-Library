@@ -9,9 +9,7 @@
   - [🛠 Built With](#built-with)
     - [Key Features](#key-features)
 - [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
-  - [Install](#install)
-  - [Usage](#usage)
+  - [Installation](#install)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🙏 Acknowledgements](#acknowledgements)
@@ -58,49 +56,26 @@ In order to run this project you need:
 - Code editor eg [Visual Studio Code](https://code.visualstudio.com/download).
 - Github: Generate an ssh key or use https to clone the repository.
 
-### Setup
+### Installation <a name="installation"></a>
 
-  git clone git@github.com:coker2019/School-Library.git
+1. Clone this repository to your desired folder:
 
-### Install
+   ```sh
+   git clone https://github.com/coker2019/School-Library.git
 
-Install this project with:
+2. Navigate to the project directory:
 
-```sh
-  
-```
+    ```sh
+    cd School-Library
 
-### Usage
+3. Run the program:
 
-To run the project, execute the following command:
-
-```sh
-  npm start
-```
-
-### Run tests
-
-To run tests, run the following command:
-
-```sh
-  npm test
-```
-
-### Deployment
-
-You can deploy this project using:
-
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
+    ```sh
+    ruby School-Library.rb
 
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
-
-
 
 👤 **Maurice Coker**
 
@@ -109,9 +84,11 @@ You can deploy this project using:
 - LinkedIn: [maurice-coker-174b129b](https://linkedin.com/in/maurice-coker-174b129b)
 
  
+👤 **Pushkar Gautam**
 
-
-
+- GitHub: [@pushkar1995](https://github.com/pushkar1995)
+- Twitter: [@Pushkar9951](https://twitter.com/Pushkar9951)
+- LinkedIn: [pushkargautam](https://www.linkedin.com/in/pushkar-gautam-94a385271/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
